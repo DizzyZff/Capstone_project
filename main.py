@@ -49,3 +49,13 @@ preprocessed_data = data.drop('artist_name', axis=1)
 preprocessed_data = preprocessed_data.drop('track_name', axis=1)
 preprocessed_data = preprocessed_data.drop('obtained_date', axis=1)
 print(preprocessed_data.head())
+
+# classifications
+X = []
+Y = []
+for i in range(len(music_genere)):
+    temp = preprocessed_data[preprocessed_data['music_genre'] == i]
+    X.append(temp.drop('music_genre', axis=1))
+    Y.append(temp['music_genre'])
+
+# model by genre
