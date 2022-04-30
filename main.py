@@ -59,3 +59,7 @@ for i in range(len(music_genere)):
     Y.append(temp['music_genre'])
 
 # model by genre
+x_train, x_test, y_train, y_test = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+for i in range(len(music_genere)):
+    x_train[i], x_test[i], y_train[i], y_test[i] = train_test_split(X[i], Y[i], test_size=0.1, random_state=18402254)
+    print(x_train[i].shape, x_test[i].shape, y_train[i].shape, y_test[i].shape)
